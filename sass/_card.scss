@@ -1,0 +1,71 @@
+@use "globals" as g;
+@use "util" as u;
+
+.card {
+  padding: u.em(20);
+  border-radius: u.em(10);
+  display: flex;
+  flex-direction: column;
+  gap: u.em(16);
+
+  &_1 {
+    background-color: g.$moderate-violet;
+
+    @include u.breakpoint(tab) {
+      grid-area: one;
+    }
+  }
+  &_2 {
+    background-color: g.$very-dark-grayish-blue;
+
+    @include u.breakpoint(tab) {
+      grid-area: two;
+    }
+  }
+  &_3 {
+    background-color: g.$white;
+    @include u.breakpoint(tab) {
+      grid-area: three;
+    }
+  }
+
+  &_5 {
+    background-color: g.$white;
+    @include u.breakpoint(tab) {
+      grid-area: five;
+    }
+  }
+  &_4 {
+    background-color: g.$very-dark-blackish-blue;
+    @include u.breakpoint(tab) {
+      grid-area: four;
+    }
+  }
+
+  ul {
+    display: flex;
+    gap: u.em(16);
+    align-items: center;
+
+    li:nth-child(1) {
+      border-radius: 50%;
+      @include u.bdr(2px, #fff);
+      overflow: hidden;
+      width: 30px;
+    }
+
+    li:nth-child(2) {
+      p:nth-child(1) {
+        font-size: 14px;
+      }
+      p:nth-child(2) {
+        font-size: 11px;
+        opacity: 0.5;
+      }
+    }
+  }
+
+  > p {
+    opacity: 0.7;
+  }
+}

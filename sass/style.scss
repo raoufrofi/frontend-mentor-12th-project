@@ -1,0 +1,32 @@
+@use "globals" as g;
+@use "util" as u;
+@use "card";
+@use "typo";
+@use "utilityclasses";
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  background-color: g.$light-grayish-blue;
+  font-family: g.$barlow;
+  padding: u.em(48) 0;
+}
+
+main {
+  position: relative;
+  display: grid;
+  gap: u.em(20);
+  width: min(350px, 90%);
+
+  @include u.breakpoint(tab) {
+    width: min(90%, 1800px);
+    grid-template-areas: ("one one two five" "three four four five");
+  }
+}
+
+img {
+  width: 100%;
+}
